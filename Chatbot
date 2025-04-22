@@ -1,0 +1,54 @@
+<?php
+session_start();
+$input = strtolower(trim($_POST['msg']));
+$username = $_SESSION['username'] ?? 'Guest';
+
+// Auto redirect for booking
+if (strpos($input, 'book') !== false || strpos($input, 'room') !== false) {
+    echo "Sure! Redirecting you to the booking page... <script>window.location.href='registerm.php';</script>";
+    exit;
+}
+
+// Auto ticket for complaints
+if (strpos($input, 'complaint') !== false || strpos($input, 'problem') !== false || strpos($input, 'issue') !== false) {
+    $conn = new mysqli("localhost", "root", "", "your_db_name");
+    $stmt = $conn->prepare("INSERT INTO complaints (username, complaint) VALUES (?, ?)");
+    $stmt->bind_param("ss", $username, $input);
+    $stmt->execute();
+    $ticket_id = $stmt->insert_id;
+    $stmt->close();
+    $conn->close();
+    echo "Thank you! Your complaint has been received. Ticket ID: #" . $ticket_id;
+    exit;
+}
+
+// GPT API response
+$api_key = "your_openai_api_key_here";
+
+$data = [
+  "model" => "gpt-3.5-turbo",
+  "messages" => [
+    ["role" => "system", "content" => "You are a smart hotel assistant chatbot named PandaBot. Help with room booking and complaints."],
+    ["role" => "user", "content" => $input]
+  ]
+];
+
+$ch = curl_init('https://api.openai.com/v1/chat/completions');
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HTTPHEADER, [
+  'Content-Type: application/json',
+  'Authorization: ' . 'Bearer ' . $api_key
+]);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+
+$response = curl_exec($ch);
+if (curl_errno($ch)) {
+  echo 'Error: ' . curl_error($ch);
+  exit;
+}
+curl_close($ch);
+
+$result = json_decode($response, true);
+echo $result['choices'][0]['message']['content'];
+?>
