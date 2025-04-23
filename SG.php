@@ -226,7 +226,7 @@
     <div class="card border-0 shadow" style="max-width: 350px; margin:auto;">
         <img src="images/rooms/1.jpg" class ="card-img-top">
       <div class="card-body">
-        <h5>Simple Room Name</h5>
+        <h5>Single room</h5>
         <h6 class="mb-4">₹200 per night</h6>
         <div class="feature mb-4">
             <h6 class="mb-1">Features</h6>
@@ -246,7 +246,7 @@
     <div class="facilities mb-4">
      <h6 class="mb-1">Facilities</h6>
         <span class="badge bg-light text-dark text-wrap lh-base">
-            Wifi
+            Wifi and Lan
             </span>
         <span class="badge bg-light text-dark text-wrap lh-base">
             TV
@@ -279,21 +279,21 @@
    <div class="card border-0 shadow" style="max-width: 350px; margin:auto;">
         <img src="images/rooms/1.jpg" class ="card-img-top">
       <div class="card-body">
-        <h5>Simple Room Name</h5>
-        <h6 class="mb-4">₹200 per night</h6>
+        <h5>Double bed room</h5>
+        <h6 class="mb-4">₹500 per night</h6>
         <div class="feature mb-4">
             <h6 class="mb-1">Features</h6>
              <span class="badge bg-light text-dark text-wrap lh-base">
-                2 Rooms
+                3 Rooms
                 </span>
              <span class="badge bg-light text-dark text-wrap lh-base">
-                2 Bathrooms
+                1 Bathrooms
                 </span>
              <span class="badge bg-light text-dark text-wrap lh-base">
                 1 balcony
                 </span>
              <span class="badge bg-light text-dark text-wrap lh-base">
-               3 Sofa
+               2 table
                 </span>
             </div>
     <div class="facilities mb-4">
@@ -305,7 +305,7 @@
             TV
             </span>
         <span class="badge bg-light text-dark text-wrap lh-base">
-            AC
+            AC and Cooler 
             </span>
         <span class="badge bg-light text-dark text-wrap lh-base">
             Room heater
@@ -332,21 +332,21 @@
     <div class="card border-0 shadow" style="max-width: 350px; margin:auto;">
         <img src="images/rooms/1.jpg" class ="card-img-top">
       <div class="card-body">
-        <h5>Simple Room Name</h5>
-        <h6 class="mb-4">₹200 per night</h6>
+        <h5>Family big room</h5>
+        <h6 class="mb-4">₹4000 per night</h6>
         <div class="feature mb-4">
             <h6 class="mb-1">Features</h6>
              <span class="badge bg-light text-dark text-wrap lh-base">
-                2 Rooms
+                5 Rooms
                 </span>
              <span class="badge bg-light text-dark text-wrap lh-base">
-                2 Bathrooms
+                4 Bathrooms
                 </span>
              <span class="badge bg-light text-dark text-wrap lh-base">
-                1 balcony
+                3 balcony
                 </span>
              <span class="badge bg-light text-dark text-wrap lh-base">
-               3 Sofa
+               6 table and sofa
                 </span>
             </div>
     <div class="facilities mb-4">
@@ -355,7 +355,7 @@
             Wifi
             </span>
         <span class="badge bg-light text-dark text-wrap lh-base">
-            TV
+            TV , Netflix 
             </span>
         <span class="badge bg-light text-dark text-wrap lh-base">
             AC
@@ -367,6 +367,7 @@
     <div class="rating mb-4">
      <h6 class="mb-1">Rating</h6>
         <span class="badge rounded-pill bg-light">
+         <i class="bi bi-star-fill text-warning"></i>
          <i class="bi bi-star-fill text-warning"></i>
          <i class="bi bi-star-fill text-warning"></i>
          <i class="bi bi-star-fill text-warning"></i>
