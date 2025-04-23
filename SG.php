@@ -571,16 +571,24 @@ var swiper = new Swiper(".swiper-Reviews", {
 
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script>
-  function toggleChat() {
-    document.getElementById("chatPanel").classList.toggle("open");
-  }
+  let swiperInitialized = false;
+  let swiperInstance;
 
-  new Swiper(".mySwiper", {
-    direction: "horizontal",
-    loop: true,
-    grabCursor: true,
-    effect: "slide",
-  });
+  function toggleChat() {
+    const panel = document.getElementById("chatPanel");
+    panel.classList.toggle("open");
+
+    // Initialize swiper only after it's visible
+    if (panel.classList.contains("open") && !swiperInitialized) {
+      swiperInstance = new Swiper(".mySwiper", {
+        direction: "horizontal",
+        loop: true,
+        grabCursor: true,
+        effect: "slide",
+      });
+      swiperInitialized = true;
+    }
+  }
 </script>
 </body>
 </html>
