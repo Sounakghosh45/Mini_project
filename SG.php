@@ -527,5 +527,59 @@ var swiper = new Swiper(".swiper-Reviews", {
     });
 
     </script>
+            <!-- PandaBot Chat Icon + Panel -->
+<div class="panda-icon" onclick="toggleChat()">
+  <img src="panda.png" alt="PandaBot">
+</div>
+
+<div class="chat-panel" id="chatPanel">
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <!-- FAQs -->
+      <div class="swiper-slide">
+        <h3>FAQs</h3>
+        <ul>
+          <li>Check-in time: 12 PM</li>
+          <li>Wi-Fi password: Ask at reception</li>
+          <li>Pool timing: 7 AM - 9 PM</li>
+        </ul>
+      </div>
+
+      <!-- Complaint Form -->
+      <div class="swiper-slide">
+        <h3>Submit Complaint</h3>
+        <form method="POST" action="panda_chatbot.php">
+          <input type="text" name="complaint_user" placeholder="Your Name" required>
+          <textarea name="complaint_msg" placeholder="Your Complaint" required></textarea>
+          <button type="submit" name="submit_complaint">Submit</button>
+        </form>
+      </div>
+
+      <!-- Food Order Form -->
+      <div class="swiper-slide">
+        <h3>Order Food</h3>
+        <form method="POST" action="panda_chatbot.php">
+          <input type="text" name="food_user" placeholder="Your Name" required>
+          <input type="text" name="food_order" placeholder="Food Items" required>
+          <button type="submit" name="submit_food">Order</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  function toggleChat() {
+    document.getElementById("chatPanel").classList.toggle("open");
+  }
+
+  new Swiper(".mySwiper", {
+    direction: "horizontal",
+    loop: true,
+    grabCursor: true,
+    effect: "slide",
+  });
+</script>
 </body>
 </html>
